@@ -1,0 +1,8 @@
+6-size.c: In function ‘main’:
+6-size.c:13:32: warning: format ‘%lu’ expects argument of type ‘long unsigned int’, but argument 2 has type ‘unsigned int’ [-Wformat=]
+   13 |  printf("Size of a long int: %lu byte(s)\n", sizeof(long int));
+      |                              ~~^             ~~~~~~~~~~~~~~~~
+      |                                |             |
+      |                                |             unsigned int
+      |                                long unsigned int
+      |                              %u
