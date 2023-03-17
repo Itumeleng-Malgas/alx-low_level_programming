@@ -4,7 +4,7 @@
  * main - Entry point
  * Return: 0
  */
- int main(void)
+int main(void)
 {
 	int i, n;
 
@@ -25,5 +25,6 @@
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }
