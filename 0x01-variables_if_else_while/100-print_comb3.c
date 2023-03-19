@@ -6,23 +6,25 @@
  */
 int main(void)
 {
-	int i, n;
+	int i;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 0; i < 100; i++)
 	{
-		for (n = i + 1; n <= 9; n++)
-		{
-			if (i != n)
-			{
-				putchar(i + '0');
-				putchar(n + '0');
+		int div = i / 10;
+		int mod = i % 10;
 
-				if (i == 8 && n == 9)
-					continue;
-				putchar(',');
-				putchar(' ');
-			}
-		}
+		if (div == mod || mod == 0)
+			continue;
+		if (div > mod)
+			continue;
+
+		putchar(div + '0');
+		putchar(mod + '0');
+
+		if (div == 8 && mod == 9)
+			break;
+		putchar(',');
+		putchar(' ');
 	}
 	putchar('\n');
 
