@@ -18,6 +18,8 @@ int main(void)
 			int unit_n = n       % 10;
 			int tens_n = n / 10  % 10;
 
+			if (unit == unit_n && tens == tens_n)
+				continue;
 			putchar(tens + '0');
 			putchar(unit + '0');
 			putchar(' ');
