@@ -1,6 +1,30 @@
 #include "main.h"
 
 /**
+ * power - computer the exponent
+ * Return: the exponent
+ * @base: the base
+ * @exponent: the exponent
+ */
+int power(int base, int exponent)
+{
+	if (exponent == 0)
+	{
+		return (1);
+	}
+	else if (exponent % 2 == 0)
+	{
+		int result = power(base, exponent / 2);
+
+		return (result * result);
+	}
+	else
+	{
+		return (base * power(base, exponent - 1));
+	}
+}
+
+/**
  * add - adds two numbers
  * Return: The sum
  * @a: first value
@@ -23,8 +47,7 @@ int add(int a, int b)
 
 	for (i = (num_digits - 1); i >= 0; i--)
 	{
-		unsigned num = (result > 0 ? result : -result);
-		_putchar(((num / 10 ^ i) % 10) + '0');
+		_putchar((result / power(10, i)) % 10 + '0');
 	}
 	_putchar('\n');
 
