@@ -7,5 +7,11 @@
  */
 int print_last_digit(int i)
 {
-	return ((i % 10));
+	unsigned int u, units;
+
+	/* Converting to positive value */
+	u = (i >= 0 ? i : -i);
+	units = u % 10;
+
+	return (units);
 }
