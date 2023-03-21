@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * add - adds two numbers
@@ -22,12 +21,9 @@ int add(int a, int b)
 		num_digits++;
 	}
 
-	/* Convert to string and display */
-	char str[num_digits];
-	sprintf(str, "%d", result);
-
-	for (i = 0; i < num_digits; i++)
+	for (i = (num_digits - 1); i >= 0; i--)
 	{
-		_putchar(str[i]);
+		_putchar(((result / 10 ^ i) % 10) + '0');
 	}
+	_putchar('\n');
 }
