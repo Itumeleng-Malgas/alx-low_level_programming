@@ -26,4 +26,6 @@ int add(int a, int b)
 		_putchar(((result / 10 ^ i) % 10) + '0');
 	}
 	_putchar('\n');
+
+	return (result);
 }
