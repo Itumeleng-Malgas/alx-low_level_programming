@@ -23,7 +23,8 @@ int add(int a, int b)
 
 	for (i = (num_digits - 1); i >= 0; i--)
 	{
-		_putchar(((result / 10 ^ i) % 10) + '0');
+		unsigned num = (result > 0 ? result : -result);
+		_putchar(((num / 10 ^ i) % 10) + '0');
 	}
 	_putchar('\n');
 
