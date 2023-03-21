@@ -7,6 +7,8 @@
  */
 int _abs(int i)
 {
-	unsigned int u = (i >= 0 ? i:-i); 
+	unsigned int u;
+
+	u = (i >= 0 ? i : -i);
 	return (u);
 }
