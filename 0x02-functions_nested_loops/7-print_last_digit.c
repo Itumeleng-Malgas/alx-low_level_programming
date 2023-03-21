@@ -13,5 +13,6 @@ int print_last_digit(int i)
 	u = (i >= 0 ? i : -i);
 	units = u % 10;
 
+	_putchar(units + '0');
 	return (units);
 }
