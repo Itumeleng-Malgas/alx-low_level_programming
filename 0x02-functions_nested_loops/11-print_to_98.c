@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * print_to_98 - print to 98
@@ -13,7 +13,10 @@ void print_to_98(int n)
 			break;
 
 		if (n != 98)
-			printf(", ");
+		{
+			printf(",");
+			printf(" ");
+		}
 
 		if (n > 98)
 			n--;
