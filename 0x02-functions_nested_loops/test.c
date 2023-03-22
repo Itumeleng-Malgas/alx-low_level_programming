@@ -2,5 +2,5 @@
 
 int main(void)
 {
-	add(10,20);
+	_abs(4);
 }
