@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	print_square(10);	
+	fizz_buzz();	
 	return (0);
 }
