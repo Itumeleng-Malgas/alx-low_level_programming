@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	print_diagonal(-12);
+	print_diagonal(10);
 	return (0);
 }
