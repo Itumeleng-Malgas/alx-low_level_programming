@@ -2,32 +2,6 @@
 #include "main.h"
 
 /**
-* isLeapYear - Checks if isLeap year
-* @year: Year to be checked
-* Return: true if is leap year false if not
-*/
-
-bool isLeapYear(int year)
-{
-	if (year % 400 == 0)
-	{
-		return (true);
-	}
-	else if (year % 100 == 0)
-	{
-		return (false);
-	}
-	else if (year % 4 == 0)
-	{
-		return (true);
-	}
-	else
-	{
-		return (false);
-	}
-}
-
-/**
 * print_remaining_days - takes a date and prints how many days are
 * left in the year, taking leap years into account
 * @month: month in number format
@@ -38,9 +12,9 @@ bool isLeapYear(int year)
 
 void print_remaining_days(int month, int day, int year)
 {
-	if (isLeapYear(year))
+	if (((year % 400 == 0) || (year % 4 == 0)) && !(year % 100 == 0))
 	{
-		if (month >= 2 && day < 60)
+		if (month >= 2 && day != 60)
 		{
 			day++;
 		}
