@@ -1,10 +1,10 @@
 #include <stdio.h>
-
 /**
-* fizz_buzz - fizz buzz game
+* main - fizzbuzz game
+* Return: 0
 */
 
-void fizz_buzz(void)
+int main(void)
 {
 	int i;
 
@@ -20,5 +20,6 @@ void fizz_buzz(void)
 			printf("%d ", i);
 	}
 	putchar('\n');
+	return (0);
 }
 
