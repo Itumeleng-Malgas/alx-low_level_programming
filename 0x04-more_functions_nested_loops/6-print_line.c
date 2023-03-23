@@ -5,9 +5,9 @@
 * @n: length of line
 */
 
-void print_line(int c)
+void print_line(int n)
 {
-	for (; c > 0; c--)
+	for (; n > 0; n--)
 		_putchar('_');
 	_putchar('\n');
 }
