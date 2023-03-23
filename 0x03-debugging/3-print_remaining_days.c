@@ -31,9 +31,9 @@ bool isLeapYear(int year)
 
 void print_remaining_days(int month, int day, int year)
 {
-	if (isLeapYear() == true)
+	if (isLeapYear(year))
 	{
-		if (month >= 2 && day >= 60)
+		if (month == 2 && day < 60)
 		{
 			day++;
 		}
