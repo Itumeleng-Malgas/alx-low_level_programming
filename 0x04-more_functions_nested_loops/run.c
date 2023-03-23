@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	fizz_buzz();	
+	print_triangle(12);	
 	return (0);
 }
