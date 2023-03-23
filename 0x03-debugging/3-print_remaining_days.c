@@ -4,26 +4,20 @@
 /**
 * isLeapYear - Checks if isLeap year
 * @year: Year to be checked
-* Return: 1 if is leap year 0 if not
+* Return: true if is leap year false if not
 */
 
 bool isLeapYear(int year)
 {
+
 	if (year % 400 == 0)
-	{
 		return (true);
-	}
 	else if (year % 100 == 0)
-	{
 		return (false);
-	} else if (year % 4 == 0)
-	{
+	else if (year % 4 == 0)
 		return (true);
-	}
 	else
-	{
 		return (false);
-	}
 }
 
 /**
@@ -37,7 +31,7 @@ bool isLeapYear(int year)
 
 void print_remaining_days(int month, int day, int year)
 {
-	if (isLeapYear())
+	if (isLeapYear() == true)
 	{
 		if (month >= 2 && day >= 60)
 		{
