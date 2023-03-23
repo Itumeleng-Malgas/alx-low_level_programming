@@ -15,7 +15,6 @@ void print_square(int size)
 		return;
 	}
 
-				
 	for (y = 0; y < size; y++)
 	{
 		for (x = 0; x < size; x++)
