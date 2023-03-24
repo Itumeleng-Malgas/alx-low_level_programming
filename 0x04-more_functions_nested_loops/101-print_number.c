@@ -33,6 +33,5 @@ void print_number(int n)
 		_putchar((n / divisor) % 10 + '0');
 		digit_count--;
 	}
-	_putchar(10);
 }
 
