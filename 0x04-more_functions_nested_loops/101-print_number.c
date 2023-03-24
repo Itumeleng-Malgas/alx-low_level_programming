@@ -7,12 +7,12 @@
 
 void print_number(int n)
 {
-	int i, temp, digit_count = 0;
+	int temp, digit_count = 0;
 
 	if (n == 0)
 		_putchar(48);
 
-	/* Haandle negative numbers */
+	/* Handle negative numbers */
 	n = n < 0 ? _putchar(45), -n : n;
 	/* Count the number of digits in the integer */
 	temp = n;
@@ -24,7 +24,7 @@ void print_number(int n)
 	/* Print each digit using _putchar */
 	while (digit_count != 0)
 	{
-		int divisor = 1;
+		int i, divisor = 1;
 
 		for (i = 1; i < digit_count; i++)
 		{
