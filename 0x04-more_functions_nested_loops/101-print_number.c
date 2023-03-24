@@ -10,10 +10,10 @@ void print_number(int n)
 	int i, temp, digit_count = 0;
 
 	if (n == 0)
-		_putchar(0 + '0');
+		_putchar(48);
 
 	/* Haandle negative numbers */
-	n = n < 0 ? _putchar('-'), -n : n;
+	n = n < 0 ? _putchar(45), -n : n;
 	/* Count the number of digits in the integer */
 	temp = n;
 	while (temp != 0)
@@ -33,6 +33,6 @@ void print_number(int n)
 		_putchar((n / divisor) % 10 + '0');
 		digit_count--;
 	}
-	_putchar('\n');
+	_putchar(10);
 }
 
