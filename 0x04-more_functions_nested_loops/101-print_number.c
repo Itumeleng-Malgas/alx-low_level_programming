@@ -1,25 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-
-/**
-* _pow - computes the exponent
-* @base: base
-* @exponent: exponet
-* Return: base to the power exponent
-*/
-
-int _pow(int base, int exponent)
-{
-	int i;
-	int result;
-
-	result = 1;
-	for (i = 0; i < exponent; i++)
-	{
-		result *= base;
-	}
-	return (result);
-}
 
 /**
 * print_number - prints an integer
@@ -28,32 +7,32 @@ int _pow(int base, int exponent)
 
 void print_number(int n)
 {
-	int num_digits;
-	int temp;
-	unsigned int pos_n;
+	int i, temp, digit_count = 0;
 
 	if (n == 0)
-	{
 		_putchar(0 + '0');
-		_putchar('\n');
-		return;
-	}
 
-	pos_n = n > 0 ? n : -n;
-	num_digits = 0;
-	temp = pos_n;
+	/* Haandle negative numbers */
+	n = n < 0 ? _putchar('-'), -n : n;
+	/* Count the number of digits in the integer */
+	temp = n;
 	while (temp != 0)
 	{
+		digit_count++;
 		temp /= 10;
-		num_digits++;
 	}
-
-	if (n < 0)
-		_putchar('-');
-
-	for (; num_digits >= 1; num_digits--)
+	/* Print each digit using _putchar */
+	while (digit_count != 0)
 	{
-		_putchar(((pos_n / _pow(10, num_digits - 1)) % 10) + '0');
+		int divisor = 1;
+
+		for (i = 1; i < digit_count; i++)
+		{
+			divisor *= 10;
+		}
+		_putchar((n / divisor) % 10 + '0');
+		digit_count--;
 	}
 	_putchar('\n');
 }
+
