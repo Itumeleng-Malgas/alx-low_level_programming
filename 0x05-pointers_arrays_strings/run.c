@@ -4,9 +4,9 @@
 int main(void)
 {
 
-	char *str = "Hello";
+	char *str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
 
-	printf("%d\n", _strlen(str));
+	_puts(str);
 
 	return (0);
 }
