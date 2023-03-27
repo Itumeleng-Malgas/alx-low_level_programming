@@ -8,9 +8,9 @@
 
 void _puts(char *str)
 {
-	long unsigned int len = 0;
+	unsigned long len = 0;
 
-	while(len < strlen(str))
+	while (len < strlen(str))
 	{
 		_putchar(str[len]);
 		len++;
