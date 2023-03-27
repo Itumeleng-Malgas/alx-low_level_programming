@@ -4,7 +4,7 @@
 int main(void)
 {
 
- 	char str[] = "0123456789";
+ 	char str[] = "01234 I56789";
 
 	puts_half(str);
 

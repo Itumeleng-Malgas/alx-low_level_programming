@@ -7,7 +7,7 @@
 
 void puts_half(char *str)
 {
-	int second_halve, length_of_the_string = strlen(str);
+	unsigned long second_halve, length_of_the_string = strlen(str);
 
 	second_halve = length_of_the_string / 2;
 	while (second_halve < length_of_the_string)
