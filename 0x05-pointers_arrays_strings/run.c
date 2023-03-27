@@ -3,8 +3,10 @@
 
 int main(void)
 {
-	
-	printf("%d\n", _strlen("Hello"));
+
+	char *str = "Hello";
+
+	printf("%d\n", _strlen(str));
 
 	return (0);
 }
