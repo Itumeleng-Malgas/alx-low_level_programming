@@ -7,13 +7,17 @@
 
 void puts_half(char *str)
 {
-	unsigned long second_halve, length_of_the_string = strlen(str);
+	unsigned long second_half, length_of_the_string = strlen(str);
 
-	second_halve = (length_of_the_string - 1) / 2;
-	while (second_halve < length_of_the_string)
+	if (length_of_the_string % 2 != 0)
+		second_half = (length_of_the_string - 1) / 2;
+	else
+		second_half = length_of_the_string / 2;
+
+	while (second_half < length_of_the_string)
 	{
-		_putchar(str[second_halve]);
-		second_halve++;
+		_putchar(str[second_half]);
+		second_half++;
 	}
 	_putchar('\n');
 }
