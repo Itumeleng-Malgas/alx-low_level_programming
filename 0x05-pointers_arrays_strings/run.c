@@ -4,9 +4,9 @@
 int main(void)
 {
 
- 	char str[] = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+ 	char str[] = "0123456789";
 
-	rev_string(str);
+	puts2(str);
 
 	printf("%s\n", str);
 	return (0);
