@@ -3,10 +3,11 @@
 
 int main(void)
 {
-	int p = 100;
+	int a = 100;
+	int b = 2;
 
-	reset_to_98(&p);
-	printf("%d\n", p);
+	swap_int(&a, &b);
+	printf("a:%d\tb:%d\n", a, b);
 
 	return (0);
 }
