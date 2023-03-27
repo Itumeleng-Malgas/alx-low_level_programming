@@ -3,11 +3,8 @@
 
 int main(void)
 {
+	int arr[] = {1,2,3};
 
- 	char str[] = "01234 I56789";
-
-	puts_half(str);
-
-	printf("%s\n", str);
+	print_array(arr, 3);
 	return (0);
 }
