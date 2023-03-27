@@ -4,9 +4,10 @@
 int main(void)
 {
 
-	char *str = "I do not fear computers. I fear the lack of them - Isaac Asimov";
+ 	char str[] = "I do not fear computers. I fear the lack of them - Isaac Asimov";
 
-	print_rev(str);
+	rev_string(str);
 
+	printf("%s\n", str);
 	return (0);
 }
