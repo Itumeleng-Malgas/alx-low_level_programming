@@ -11,13 +11,11 @@ void puts_half(char *str)
 
 	second_half = length_of_the_string / 2;
 	if (length_of_the_string % 2 == 1)
-		second_half = (length_of_the_string - 1) / 2;
+		second_half -= 1;
 
 	while (second_half < length_of_the_string)
 	{
 		_putchar(str[second_half]);
-		if (second_half == length_of_the_string - 1)
-			break;
 		second_half++;
 	}
 	_putchar('\n');
