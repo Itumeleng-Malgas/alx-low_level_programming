@@ -3,8 +3,8 @@
 
 int main(void)
 {
-	int a = 100;
-	int b = 2;
+	int a = 98;
+	int b = 42;
 
 	swap_int(&a, &b);
 	printf("a:%d\tb:%d\n", a, b);
