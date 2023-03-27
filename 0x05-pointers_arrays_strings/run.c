@@ -6,7 +6,7 @@ int main(void)
 
  	char str[] = "0123456789";
 
-	puts2(str);
+	puts_half(str);
 
 	printf("%s\n", str);
 	return (0);
