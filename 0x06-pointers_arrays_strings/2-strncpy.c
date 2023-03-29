@@ -12,6 +12,10 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	char *ptr = dest;
+	int dest_len = strlen(dest);
+
+	if (dest_len < n)
+		return (NULL);
 
 	while (n--)
 		*ptr++ = *src++;
