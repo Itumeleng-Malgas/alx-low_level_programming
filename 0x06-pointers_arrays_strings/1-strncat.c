@@ -17,7 +17,6 @@ char *_strncat(char *dest, char *src, int n)
 
 	while (n--)
 		*ptr++ = *src++;
-	*ptr = '\0';
 
 	return (dest);
 }
