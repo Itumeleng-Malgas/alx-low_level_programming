@@ -4,20 +4,24 @@
 
 /**
 * cap_string - capitalizes all words
-* @s: string
+* @str: string
 * Return: capitalized string
 */
 
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
-	char sep[] = " \t\n,;.!?\"(){}";
-	char *word = strtok(s, sep);
+	char *ptr = str;
+	int capitalize_next = 1;
 
-	while (word != NULL)
+	while (*ptr != '\0')
 	{
-		*word = toupper(*word);
-		word = strtok(NULL, sep);
+		if (capitalize_next && islower(*ptr))
+			*ptr = toupper(*ptr);
+		capitalize_next = isspace(*ptr) || *ptr == ',' || *ptr == ';' || *ptr == '.'
+			|| *ptr == '!' || *ptr == '?' || *ptr == '"' || *ptr == '('
+			|| *ptr == ')' || *ptr == '{' || *ptr == '}';
+		ptr++;
 	}
 
-	return (s);
+	return (str);
 }
