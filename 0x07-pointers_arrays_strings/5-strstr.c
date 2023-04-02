@@ -19,10 +19,14 @@ char *_strstr(char *haystack, char *needle)
 		{
 			hay = haystack;
 			while (*ptr)
+			{
 				if (*ptr++ != *hay++)
-					continue;
-			return (haystack);
+					break;
+			}
+			if (*ptr == '\0')
+				return (haystack);
 		}
+
 		ptr = needle;
 		haystack++;
 	}
