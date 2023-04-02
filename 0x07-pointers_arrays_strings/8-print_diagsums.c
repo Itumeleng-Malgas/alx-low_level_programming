@@ -1,9 +1,11 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
-* print_diagsums - Entry point
-* @a: input
-* @size: input
+* print_diagsums -  prints the sum of the two diagonals
+* of a square matrix of integers
+* @a: array
+* @size: array size
 */
 
 void print_diagsums(int *a, int size)
