@@ -9,21 +9,24 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int n = 0;
-	char *ptr = accept;
+	/* start n @ 1 for null terminator */
+	unsigned int n = 1;
+	char *ptr = s;
 
-	while (*s++)
+	while (*accept)
 	{
-		while (*ptr++)
+		while (*ptr)
 		{
-			if (*s == *ptr)
+			if (*ptr == *accept)
 			{
 				n++;
 				break;
 			}
+			ptr++;
 		}
 
-		ptr = accept;
+		ptr = s;
+		accept++;
 	}
 
 	return (n);
