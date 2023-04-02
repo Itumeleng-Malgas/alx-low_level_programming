@@ -13,6 +13,10 @@ char *_strstr(char *haystack, char *needle)
 	char *ptr = needle;
 	char *hay;
 
+	/* Check for empty string */
+	if (!*ptr)
+		return (haystack);
+	
 	while (*haystack)
 	{
 		if (*haystack == *ptr)
