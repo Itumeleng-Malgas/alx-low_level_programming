@@ -10,22 +10,23 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int n = 0;
-	char *ptr = s;
+	char *ptr = accept;
 
-	while (*accept)
+	while (*s)
 	{
 		while (*ptr)
 		{
-			if (*ptr == *accept)
+			if (*s == *ptr)
 			{
 				n++;
-				break;
+				s++;
+				ptr = accept;
 			}
-			ptr++;
+			else
+				ptr++;
 		}
 
-		ptr = s;
-		accept++;
+		return (n);
 	}
 
 	return (n);
