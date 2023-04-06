@@ -1,39 +1,43 @@
 #include "main.h"
 
 /**
-* _sqrt - finds the square root of a number
-* @n: non negative integer
-* @i: iterator
-* Return: square of n
-*/
-
-int _sqrt(int n, int i)
+ * is_prime - Checks for prime number.
+ * @n: The number to checks.
+ * @divisor: The divisor being tested.
+ *
+ * Return: 1 number is prime, 0 otherwise.
+ */
+int is_prime(int n, int divisor)
 {
-	for (; i * i <= n; i++)
+	/* Base cases */
+	if (n < 2)
 	{
+		return (0);
 	}
-	return (i - 1);
+	if (n == 2 || n == 3)
+	{
+		return (1);
+	}
+	if (n % 2 == 0 || n % divisor == 0)
+	{
+		return (0);
+	}
+	if (divisor * divisor > n)
+	{
+		return (1);
+	}
+
+	/* Recursive case */
+	return (check_prime(n, divisor + 2));
 }
 
 /**
-* is_prime_number - finds the prime number
-* @n: number > 2
-* Return: 1 success, 0 failure
-*/
-
+ * is_prime_number - Checks if a number is prime.
+ * @n: The number to checks.
+ *
+ * Return: 1 number is prime, 0 otherwise.
+ */
 int is_prime_number(int n)
 {
-	static int div = 2;
-
-	if (n <= 0)
-		return (0);
-
-	if (div > _sqrt(n, 1))
-		return (1);
-
-	if (n % div == 0)
-		return (0);
-
-	div++;
-	return (is_prime_number(n));
+	return (check_prime(n, 3));
 }
