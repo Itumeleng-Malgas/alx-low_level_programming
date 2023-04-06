@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 /**
 * _sqrt - computes natural square root of a number
 * @n: integer to be squared
-* @i: power
+* @i: possible root
 * Return: n squared
 */
 
@@ -28,7 +28,7 @@ int _sqrt(int n, int i)
 
 	/* found a the root */
 	if (i * i == n)
-		return (n);
+		return (i);
 
 	return (_sqrt(n, i + 1));
 }
