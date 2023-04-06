@@ -3,13 +3,12 @@
 /**
 * _sqrt - finds the square root of a number
 * @n: non negative integer
+* @i: iterator
 * Return: square of n
 */
 
-int _sqrt(int n)
+int _sqrt(int n, int i)
 {
-	int i = 1;
-
 	for (; i * i <= n; i++)
 	{
 	}
@@ -29,7 +28,7 @@ int is_prime_number(int n)
 	if (n <= 0)
 		return (0);
 
-	if (div > _sqrt(n))
+	if (div > _sqrt(n, 1))
 		return (1);
 
 	if (n % div == 0)
