@@ -28,7 +28,7 @@ int is_prime(int n, int divisor)
 	}
 
 	/* Recursive case */
-	return (check_prime(n, divisor + 2));
+	return (is_prime(n, divisor + 2));
 }
 
 /**
@@ -39,5 +39,5 @@ int is_prime(int n, int divisor)
  */
 int is_prime_number(int n)
 {
-	return (check_prime(n, 3));
+	return (is_prime(n, 3));
 }
