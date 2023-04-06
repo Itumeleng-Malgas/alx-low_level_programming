@@ -6,8 +6,10 @@
 * Return: square of n
 */
 
-int _sqrt(int n, int i)
+int _sqrt(int n)
 {
+	int i = 1;
+
 	for (; i * i <= n; i++)
 	{
 	}
@@ -27,7 +29,7 @@ int is_prime_number(int n)
 	if (n <= 0)
 		return (0);
 
-	if (div > _sqrt(n, 1))
+	if (div > _sqrt(n))
 		return (1);
 
 	if (n % div == 0)
