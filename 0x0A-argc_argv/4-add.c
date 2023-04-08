@@ -10,18 +10,22 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, num, sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
+		num = atoi(argv[i]);
 		if (argc < 2)
 			break;
 
-		if (!atoi(argv[i]))
+		if (!num)
 		{
 			printf("Error\n");
 			return (1);
 		}
+
+		if (num < 0)
+			continue;
 
 		sum += atoi(argv[i]);
 	}
