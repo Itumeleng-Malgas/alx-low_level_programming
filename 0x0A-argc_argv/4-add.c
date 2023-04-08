@@ -24,10 +24,8 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 
-		if (num < 0)
-			continue; /* num *= -1; */
-
-		sum += atoi(argv[i]);
+		if (num > 0)
+			sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
