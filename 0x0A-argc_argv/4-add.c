@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		char *str;
 		long num = strtol(argv[i], &str, 10);
-	
+
 		/* string part found */
 		if (*str)
 		{
