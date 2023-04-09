@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <ctype.h>
 #include "main.h"
 
 /**
@@ -15,9 +14,11 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; i++)
 	{
-		int num = atoi(argv[i]);
-
-		if (isdigit(num))
+		char *str;
+		long num = strtol(argv[i], &str, 10);
+	
+		/* string part found */
+		if (*str)
 		{
 			printf("Error\n");
 			return (1);
