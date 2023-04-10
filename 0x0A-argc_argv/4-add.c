@@ -23,8 +23,9 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
-
-		sum += num;
+		
+		if (num > 0)
+			sum += num;
 	}
 
 	printf("%d\n", sum);
