@@ -12,14 +12,15 @@
 
 char *create_array(unsigned int size, char c)
 {
-	char *char_array = (char *)malloc(size);
+	char *char_array = NULL;
 
-	if (char_array && c != '\0' && size)
+	if (size && c)
 	{
-		memset(char_array, c, size);
-		return (char_array);
+		char_array = (char *)malloc(size);
+		if (char_array)
+			memset(char_array, c, size);
 	}
 
-	return (NULL);
+	return (char_array);
 }
 
