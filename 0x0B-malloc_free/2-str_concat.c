@@ -11,48 +11,24 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
-	int length;
-
-	if (s1 && !s2)
-		ptr = _strcpy(strlen(s1), s1);
-
-	if (s2 && !s1)
-		ptr = _strcpy(strlen(s2), s2);
-
-	if (!s1 && !s2)
-	{
-		ptr = (char *)malloc(1);
-		*ptr = '\0';
-	}
-	else
-	{
-		length = strlen(s1) + strlen(s2);
-		ptr = (char *)malloc(length + 1);
-
-		if (ptr)
-		{
-			strcpy(ptr, s1);
-			strcpy(ptr + strlen(s1), s2);
-		}
-	}
-
-	return (ptr);
-}
-
-/**
-* _strcpy - creates sufficient buffer then copies a string to it
-* @size: buffer size
-* @str: source string
-* Return: string at new memory location
-*/
-
-char *_strcpy(unsigned int size, char *str)
-{
+	int s1_len, s2_len;
 	char *ptr;
 
-	ptr = (char *)malloc(size + 1);
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	s1_len = strlen(s1);
+	s2_len = strlen(s2);
+
+	ptr = (char *)malloc(s1_len + s2_len + 1);
 	if (ptr)
-		strcpy(ptr, str);
+	{
+		strcpy(ptr, s1);
+		strcpy(ptr + s1_len, s2);
+	}
+
 	return (ptr);
 }
