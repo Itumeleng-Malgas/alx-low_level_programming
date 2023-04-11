@@ -14,7 +14,7 @@ char *create_array(unsigned int size, char c)
 {
 	char *char_array = (char *)malloc(size);
 
-	if (char_array && c) 
+	if (char_array && c && size)
 	{
 		memset(char_array, c, size);
 		return (char_array);
