@@ -5,8 +5,7 @@ int main(void)
 {
 	char *ptr;
 
-	ptr = "First, solve the problem. Then, write the code";
-
+	ptr = "hello";
 	puts_half(ptr);
 
 	return (0);
