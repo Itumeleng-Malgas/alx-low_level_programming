@@ -15,7 +15,7 @@ char *_strdup(char *str)
 
 	if (str)
 	{
-		ptr = (char *)malloc(sizeof(str) * strlen(str));
+		ptr = (char *)malloc(strlen(str));
 		if (ptr)
 			strcpy(ptr, str);
 	}
