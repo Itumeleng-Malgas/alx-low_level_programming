@@ -13,10 +13,11 @@ char *_strdup(char *str)
 {
 	char *ptr = NULL;
 
-	if (str)
+	if (str && strlen(str) > 0)
 	{
 		ptr = (char *)malloc(sizeof(str));
-		strcpy(ptr, str);
+		if (ptr)
+			strcpy(ptr, str);
 	}
 
 	return (ptr);
