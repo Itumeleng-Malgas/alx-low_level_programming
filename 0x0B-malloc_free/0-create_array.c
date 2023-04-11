@@ -14,10 +14,10 @@ char *create_array(unsigned int size, char c)
 {
 	char *char_array = NULL;
 
-	if (size != 0 && c != '\0')
+	if (size != 0)
 	{
 		char_array = (char *)malloc(size);
-		if (char_array)
+		if (char_array && c != '\0')
 			memset(char_array, c, size);
 	}
 
