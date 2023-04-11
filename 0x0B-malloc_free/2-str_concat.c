@@ -21,7 +21,7 @@ char *str_concat(char *s1, char *s2)
 		ptr = _strcpy(strlen(s2), s2);
 
 	if (!s1 && !s2)
-		ptr = _strcpy(sizeof(char), '\0');
+		ptr = _strcpy(sizeof(char), "");
 	else
 	{
 		length = strlen(s1) + strlen(s2);
