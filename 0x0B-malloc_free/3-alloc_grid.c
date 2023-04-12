@@ -28,8 +28,9 @@ int **alloc_grid(int width, int height)
 		{
 			while (i--)
 			{
+				int size = sizeof(ptr[i]) / sizeof(ptr[i][0]);
 				int x = 0;
-				for (;x < strlen(ptr[i]); x++)
+				for (;x < size; x++)
 					free(ptr[i][x]);
 			}
 
