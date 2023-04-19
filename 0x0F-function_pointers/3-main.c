@@ -22,7 +22,7 @@ int main(int argc, char *argv[] __attribute__ ((unused)))
 	}
 
 	calc = get_op_func(argv[2]);
-	if (calc == NULL && argv[2][1] != '\0')
+	if (calc == NULL || argv[2][0] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
