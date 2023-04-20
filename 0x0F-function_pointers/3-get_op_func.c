@@ -10,7 +10,6 @@
  *
  * Return: pointer to the  correct function
  */
-
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
