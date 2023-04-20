@@ -11,24 +11,19 @@
  */
 int main(int argc, char *argv[] __attribute__ ((unused)))
 {
-	int (*calc)(int, int);
-	int num = 0;
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	calc = get_op_func(argv[2]);
-	if (calc == NULL || argv[2][1] != '\0')
+	if (!get_op_func(argv[2]) || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	num = calc(atoi(argv[1]), atoi(argv[3]));
 
-	printf("%d\n", num);
+	printf("%d\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
 
-	exit(EXIT_SUCCESS);
+	return (0);
 }
