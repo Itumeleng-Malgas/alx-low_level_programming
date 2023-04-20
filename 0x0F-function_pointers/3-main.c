@@ -9,7 +9,6 @@
  *
  * Return: 0
  */
-
 int main(int argc, char *argv[] __attribute__ ((unused)))
 {
 	int (*calc)(int, int);
