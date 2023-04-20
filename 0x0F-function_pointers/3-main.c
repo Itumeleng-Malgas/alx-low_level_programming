@@ -20,6 +20,13 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	if (strcmp(op, "+") != 0 && strcmp(op, "*") != 0 && strcmp(op, "-") != 0
+			&& strcmp(op, "/") != 0 && strcmp(op, "%") != 0)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 	if (!get_op_func(op))
 	{
 		printf("Error\n");
