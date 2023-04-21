@@ -65,13 +65,13 @@ void print_all(const char * const format, ...)
 	while (format[i] != '\0')
 	{
 		char current_format = format[i];
-		void *arg = va_arg(args, void*);
 
 		j = 0;
 		while (j < format_size)
 		{
 			if (format_map[j].format == current_format)
 			{
+				void *arg = va_arg(args, void*);
 				format_map[j].print_func(&arg);
 				if (format[i + 1] != '\0')
 					printf(", ");
