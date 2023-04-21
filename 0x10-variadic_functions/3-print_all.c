@@ -1,17 +1,7 @@
 #include "variadic_functions.h"
 #include <stdlib.h>
 #include <stdarg.h>
-#include <string.h>
 #include <stdio.h>
-
-/**
- * print_char - print a character
- * @arg: char type param
- */
-void print_char(void *arg)
-{
-	printf("%c", *(char *)arg);
-}
 
 /**
  * print_int - print an integer
@@ -52,7 +42,6 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	format_t format_map[] = {
-		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_string},
@@ -72,6 +61,7 @@ void print_all(const char * const format, ...)
 			if (format_map[j].format == current_format)
 			{
 				void *arg = va_arg(args, void*);
+
 				format_map[j].print_func(&arg);
 				if (format[i + 1] != '\0')
 					printf(", ");
