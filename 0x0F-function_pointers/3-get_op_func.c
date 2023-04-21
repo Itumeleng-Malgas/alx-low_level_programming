@@ -23,12 +23,13 @@ int (*get_op_func(char *s))(int, int)
 	int i = 0;
 
 	while (ops[i].op && *(ops[i].op) != *s)
-		i++;
-
-	if (ops[i].f == NULL)
 	{
-		printf("Error\n");
-		exit(99);
+		if (ops[i].f == NULL)
+		{
+			printf("Error\n");
+			exit(99);
+		}
+		i++;
 	}
 
 	return (ops[i].f);
