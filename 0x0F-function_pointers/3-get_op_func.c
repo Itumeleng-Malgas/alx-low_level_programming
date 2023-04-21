@@ -25,7 +25,7 @@ int (*get_op_func(char *s))(int, int)
 	while (ops[i].op && *(ops[i].op) != *s)
 		i++;
 
-	if (ops[i].f = NULL)
+	if (ops[i].f == NULL)
 	{
 		printf("Error\n");
 		exit(99);
