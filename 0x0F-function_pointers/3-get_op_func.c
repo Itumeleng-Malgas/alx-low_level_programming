@@ -24,6 +24,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (ops[i].op && *(ops[i].op) != *s)
 		i++;
+
 	if (!ops[i].f)
 	{
 		printf("Error\n");
