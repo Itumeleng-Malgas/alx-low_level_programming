@@ -41,8 +41,7 @@ void print_string(void *arg)
 
 	if (str == NULL)
 		printf("(nil)");
-	else
-		printf("%s", str);
+	printf("%s", str);
 }
 
 /**
