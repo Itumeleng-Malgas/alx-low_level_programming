@@ -1,5 +1,5 @@
-#include "variadic_functions.h"
 #include <stdlib.h>
+#include "variadic_functions.h"
 
 /**
  * main - check the code
@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-    print_strings(", ", 2, "Jay", "Django", NULL);
+	print_all("cise", 'B', 3, "Hello", 10.2);
     return (0);
 }
