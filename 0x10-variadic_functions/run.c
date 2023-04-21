@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	print_all("cise", 'B', 3, "Hello", 10.2);
+	print_all("cisf", 'B', 3, "Hello", 10.2);
     return (0);
 }
