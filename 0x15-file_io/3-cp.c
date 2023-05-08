@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	int fd_from, fd_to;
 	ssize_t nread, nwritten;
 	char *buffer;
-	char int_str[2];
+	char from_str[10], to_str[10];
 
 	if (argc != 3)
 		error_out(97, "Usage: %s file_from file_to\n", argv[0]);
@@ -54,11 +54,11 @@ int main(int argc, char *argv[])
 
 	if (nread == -1)
 		error_out(98, "Error: Can't read from file %s\n", argv[1]);
-	sprintf(int_str, "%d", fd_from);
+	sprintf(from_str, "%d", fd_from);
 	if (close(fd_from) == -1)
-		error_out(100, "Error: Can't close fd %s\n", int_str);
-	sprintf(int_str, "%d", fd_to);
+		error_out(100, "Error: Can't close fd %s\n", from_str);
+	sprintf(to_str, "%d", fd_to);
 	if (close(fd_to) == -1)
-		error_out(100, "Error: Can't close fd %s\n", int_str);
+		error_out(100, "Error: Can't close fd %s\n", to_str);
 	return (0);
 }
