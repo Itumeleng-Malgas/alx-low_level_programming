@@ -4,6 +4,15 @@
 #include <stdio.h>
 
 /**
+ * print_char - print a character
+ * @arg: char type param
+ */
+void print_char(void *arg)
+{
+	printf("%c", *(char *)arg);
+}
+
+/**
  * print_int - print an integer
  * @arg: int type paran
  */
@@ -18,7 +27,7 @@ void print_int(void *arg)
  */
 void print_float(void *arg)
 {
-	printf("%f", *(float *)arg);
+	printf("%f", *(double *)arg);
 }
 
 /**
@@ -42,6 +51,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	format_t format_map[] = {
+		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_string},
