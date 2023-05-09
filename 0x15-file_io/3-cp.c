@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		error_out(98, "Error: Can't read from file %s\n", argv[1]);
 
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0666);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	fchmod(fd_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (fd_to == -1)
 		error_out(99, "Error: Can't write to %s\n", argv[2]);
