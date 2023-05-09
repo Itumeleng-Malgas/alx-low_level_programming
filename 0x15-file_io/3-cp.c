@@ -40,12 +40,9 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		error_out(98, "Error: Can't read from file %s\n", argv[1]);
 
-	fd_to = open(argv[2], O_CREAT | O_EXCL | O_WRONLY | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_EXCL | O_WRONLY | O_TRUNC, 0666);
 	if (fd_to == -1)
 		error_out(99, "Error: Can't write to %s\n", argv[2]);
-
-	if (fchmod(fd_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
-		perror("fchmod");
 	buffer = malloc(BUFFER_SIZE);
 	if (!buffer)
 		exit(EXIT_FAILURE);
