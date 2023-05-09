@@ -1,4 +1,10 @@
 #include "main.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * error_out - print the error message and exit
@@ -34,14 +40,16 @@ int main(int argc, char *argv[])
 	if (fd_from == -1)
 		error_out(98, "Error: Can't read from file %s\n", argv[1]);
 
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	fd_to = open(argv[2], O_CREAT | O_EXCL | O_WRONLY | O_TRUNC, 0666);
 	if (fd_to == -1)
 		error_out(99, "Error: Can't write to %s\n", argv[2]);
+
+	if (fchmod(fd_to, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH) == -1)
+		exit(EXIT_FAILURE);
 
 	buffer = malloc(BUFFER_SIZE);
 	if (!buffer)
 		exit(EXIT_FAILURE);
-
 	while ((nread = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		nwritten = write(fd_to, buffer, nread);
@@ -51,7 +59,6 @@ int main(int argc, char *argv[])
 			error_out(99, "Error: Can't write to %s\n", argv[2]);
 		}
 	}
-
 	if (nread == -1)
 		error_out(98, "Error: Can't read from file %s\n", argv[1]);
 	sprintf(from_str, "%d", fd_from);
