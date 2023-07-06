@@ -15,4 +15,4 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	*n |= (1UL << index); /* used or insert it if is 0 */
 	return (1);
-
+}
