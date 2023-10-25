@@ -1,6 +1,6 @@
 # Makefile for building the 'school' executable
 
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 CC = gcc
 
 all: $(SRC)
