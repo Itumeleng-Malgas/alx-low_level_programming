@@ -1,0 +1,32 @@
+# Makefile for building the 'school' executable
+
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+
+NAME = school
+RM = rm -f
+CC = gcc
+
+.PHONY: all clean oclean fclean re
+all: $(NAME)
+
+# Linking the executable
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
+
+# Compiling of source files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Removes executable and Emacs/Vim temporary files
+clean:
+	$(RM) $(NAME) *~ .*~
+
+# Removes object files
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+# forces recompilation of all source files
+re: fclean all
